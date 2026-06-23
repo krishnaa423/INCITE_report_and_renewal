@@ -1,0 +1,301 @@
+\documentclass{article}
+
+%packages
+\usepackage{hyperref}
+\usepackage{geometry}
+
+%settings
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+}
+\geometry{
+    margin=1in,
+}
+\title{INCITE report and renewal}
+\author{Krishnaa Vadivel}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Requirements}
+
+
+\subsection{Email contents from Zhenglu Li}
+
+
+Zhenglu Li
+Attachments
+Jun 10, 2026, 1:54 PM (13 days ago)
+to Weichen, Gurjyot, Shang, me, Jinyuan, Aaron, Emily, Stephen, Zui, Jimy, Zien, Chih, Steven, Jeffrey, Diana, Felipe, Mauro, Zhenglu
+
+Dear All,
+
+Our INCITE project now requires the submission of a renewal proposal for the resources of the second year (2027) as the standard procedure.  I would like to thank you in advance for your help and kindly ask for input for the renewal proposal, by June 26, Friday.  If the point of contact in your group has changed, please kindly let me know.
+
+Detailed instructions can be found here: https://doeleadershipcomputing.org/proposal-renewal-instructions/ .  At the end of the email, I will highlight some key instructions. 
+
+In preparing your input, please weigh Achievements vs. Plans for next year with a ~2:1 ratio.  In your input, please include 1. Project Achievements, 2. Project Plans for Next Year, 3. Publications Resulting from INCITE Awards, along with references.
+
+I attach our proposal from last year for reference of proposed research and milestones.  If you have any questions, please feel free to let me know.  Thank you again for your very kind help and support!
+
+Best,
+Zhenglu
+
+Link: https://doeleadershipcomputing.org/proposal-renewal-instructions/
+
+
+\subsection{More instructions}
+
+============== Key Information from Instructions on Renewal Proposal ==============
+
+Project Achievements: The Project Achievements should address the following points. This section is typically about 10 pages.
+Significance of Accomplishments to Date: Explain what advances you accomplished through the INCITE award (e.g., impact on community paradigms, valuable insights into or solving a long-standing challenge). Place the proposed research in the context of competing work in your discipline or business. Reiterate the milestones of your proposal and discuss the accomplishments (planned or unplanned) achieved this year relative to those milestones and allocation use. Summarize the impact of the results achieved: What conclusions can be drawn and what is solved because of these results? What new and follow-on investigations have these results motivated?
+Allocation Use: Summarize your project’s allocation use to-date this year: percent of allocated node-hours used on each platform, job size distribution, number of users, etc. Associate the resource use with particular results where possible. Also summarize your project’s projected use from now until the end of December (i.e., end of current allocation year): anticipated percent of allocated node-hours used on each platform, job size distribution, etc. Associate this resource usage with anticipated results. Do you expect your usage to be evenly distributed throughout the remainder of this year? If not, explain. 
+Application Parallel Performance: Summarize the performance (percent of peak, scalability) of your project’s production application used in the allocations this year. What progress was made in improving the application’s performance on this architecture? What challenges (if any) remain? List the technical risks and challenges that were confronted by your project (overcome or not) this year. Were they anticipated? 
+Data Storage: What is the current cumulative size of stored data? What is your projection for the cumulative size of stored data at the end of the project? What tools and/or plans do you have to reduce the data? To share the data?  The LCF data management policies can be found at:
+ALCF: http://www.alcf.anl.gov/user-guides/data-policy
+OLCF: https://www.olcf.ornl.gov/for-users/olcf-policy-guide/
+
+Project Plans for Next Year: The Project Plans should address the following points. This section is typically about 4 pages.
+Summarize the Project Plans: Briefly explain what advances you expect to accomplish through the next award period and associate these with the overarching goals of your project. Clearly explain the relationships between the milestones, planned production simulations, and expected compute time required for these sets of simulations. Explain any change in the scope of the project (research objectives, computational approach, personnel, etc.) relative to the plans and approach articulated in the original proposal. If resource requirements differ from those of the previous year, provide details on the differences (platform, increased/decreased node-hours, file system and archival storage, networking) and the reasons for them. If you are requesting a new resource, you must provide evidence that your project is optimized to run on that resource. See the New Code Applications section below. Summarize the requirements that are driving the differences and what science/technology outcomes are expected. Significant changes to the original project scope should be discussed with the INCITE Program Manager prior to submittal.
+Development Work: Describe what, if any, development work has been carried out and the outcome of this work. Describe what additional development work will be executed, and when. Provide an estimate for the percentage of project time you will spend on development computing (i.e., porting, performance analysis) and other nonproduction runs.
+New Code Applications (where relevant): Are you planning to use any new production codes next year that were not included in your original proposal? Or are you proposing use of a new resource not included in your original proposal? If so, provide direct evidence, including supporting quantitative data, for your production application's parallel performance for the intended research simulations and analysis. Ideally, the proposing team will have generated the data. If you cite work by others, explain why it is applicable here. You should use the application code you intend for the production work, not a related code. Data for sample systems not related to the intended research is undesirable. Scaling and performance data in either strong or weak scaling mode should be provided. Explain how the strong or weak scaling applies to the proposed work. For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics. See the examples at the end of this page.
+NOTE: You may apply for a startup account at one of the centers to conduct performance studies. Director’s Discretion applications are available at
+ALCF: https://www.alcf.anl.gov/science/directors-discretionary-allocation-program
+OLCF: https://my.olcf.ornl.gov/project-application-new
+
+Publications Resulting from INCITE Awards: Provide a list of publications resulting from your current and previous INCITE awards to this project team for work related to the proposal under consideration. Only those publications that include an acknowledgement to INCITE and/or the LCF may be included. This list may not be used in lieu of references in Section 1, “Project Achievements and Plans.” If applicable, list the citations in both Sections 1 and 2. (Does not count toward the 14-page Project Achievements and Plans limit).
+
+
+
+\section{Project Achievements}
+
+\subsection{Significant Accomplishments to date}
+
+Things to answer:
+\begin{itemize}
+\item Advances accomplished. 
+\item Impact on community paradigms. 
+\item Valuable insights into some long standing challenge. 
+\item Reiterate milestones of proposal and accomplishments (planned and unplanned). 
+\item Impact of results achieved. 
+\item What new and follow-on investigations have these results motivated. 
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+So my project is the one that does the self-trapped exciton investigation using the excited state forces 
+method. So the project started with first theory and code development for self-trapped excitons self-energy 
+diagrams through the use of tadpole and fan-migdal diagrams. The Tadpole diagram was solved self-consistently. 
+So the first method that was used was towards self-consistent methods for self-trapped exciton analysis. 
+
+Even thjgouth the project said investigation of self-trapped exciton suing excited state forces, the method 
+encountered some challenges. Specifically, the initial guess influenced the number of steps and convergence 
+in the excited state forces calculation. SO in order to minimize the steps, a better initial guesss was needed 
+and the self-consistent self-energy method provided a better starting point for this. 
+
+So initially, was happenedf was that calculations were run on Cs2AgInCl6, and one found out that the convergence 
+oscillated or was hard to achieve. This suggested to use something else as a starting point. Since these computations
+are expensive, the computations are not easy to just repeate with differetn starting points easily. This motivated 
+the need for better theory and other code to get better initial guess. This leads to the above paragraph. 
+
+Now, the self-energy method has tadpole and fan-migdal diagrams that required some tehory development and then subsequent 
+code developemtn. The method for calculation involved inputs form finite momentum exciton calculations for two systems, 
+LiF, SiO2 and Cs2AgInCl6. Specifically, one calculated the finite momentum excitons on these systems for these
+systems on 2x2x2, 4x4x4, 6x6x6, and 8x8x8 grids and then extrapolated the results for higher infinite grids. 
+
+The result of these calculations, was to first benchmark the calculations for LiF and SiO2, since these systems have 
+STE results in literature. Experimetnal results for SiO2 also exist. This gives a good place to test the code and theory
+implementation to see what we can get. The downside fo the theory is that we work under the harmonic approximation for 
+lattice distortion. The upside of the theory is that we can also include dynamic effects which include temperature 
+dependence that is not captured by the excited-state forces method. The excited-state forces method onthe other 
+hand captures the non-harmonic lattice distortion that STEs can cause. 
+
+Then we used the distortion calculated form the partially self-consistent self-energy method to be able to get 
+the initial guess for the excited state forces method. This way the number of iterations for the excited-state 
+forces for Cs2AgInCl6 can be drastically reduced to a few steps, since we expect to be close to the minimum, and 
+ESF in this case captures the static difference due to non-harmonic distortions. 
+
+As for impact on community paradigms, STE temeprature dependence has not been calculated from first oprinciples, so 
+this provides a novel way to calculate it, with the associted theory behind the methods. Addidionally, the work 
+also compares the results and approximations formt he self-energy mehtod and the excited state forces method. 
+
+For the valuable insights into the long standing challenge, the challenge being to use excited-state forces method. 
+A good initial guess is crucial for convergence for STEs, as certain initial distortions do not achieve convergence. 
+Toy model calculations show this could be due to barriers in the STE formation. 
+
+The milestones and goalds was to be able to undestand and analyze STEs from first principles and decelop 
+associated code for it. This work was able to make theoretical advancements and develop code to be able to 
+compare and contrast results. 
+
+The impact is that, this provides the phonon states and the temperature dependence on the width of the STE 
+emission and estimatte for the stokes shift based on first pricniples for STEs, with associted thory. 
+
+Some follow up investigations that were motivated initially was from the failture of convergence in the STE
+in Cs2AgInCl6. And also toy models with Frohlich coupling show that a better initial guess is needed to be able 
+to get convergence in some cases, as STEs can host barriers. The barrier comes form the competition in the 
+momentum dependent "kinetic energy" of excitons and the energy reduction in the lattice distortion. 
+
+Obviously a lot of this is garbled and a first info dump of everyhing. Hopefully the AI can cleanup the above stuff. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\subsection{Allocation use}
+
+Things to answer:
+\begin{itemize}
+\item Percent of allocated node hours used. 
+\item Job size distribution. 
+\item Number of users. 
+\item Associate resource use with particular results if possible (can be less strict about this). 
+\item Allocated node hours used. 
+\item Possible usage and anticipated resource use with results. 
+\item Resource use to be even throughout the year? Explain. 
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+So the node hours used is 1300 node hours. We need to break it down based on usage. 
+Roughly the following comptuation was used. The user was krishnaa423. 
+LiF, SiO2, Cs2AgInCl6 2x2x2, 4x4x4, 6x6x6, 8x8x8 finite monetum calculations 
+that involved DFT, DFPT and EPW using quantum espresso. Then BerkeleyGW 
+for GW+BSE calculations till i get finite momentum exciton calculations. 
+
+Then developing and debugging my code on LIF for the self-neergy method took some 
+time and then running it on these grids. 
+
+Then I used the inital guess to be able to run the STE on Cs2AgInCl6, the comutationally 
+intensive part. That would have taken about 5 iterations with DFT + DFPT + GW + BSE run and repeate and 
+step size. 
+
+So i will let you estimate some proportions based on that. I can tell you that 
+N size is 1e5 roughly and 1e7 for the normal and supercell stuff. Then we calculate 
+from the fact that all memories are square of that split on noes and each node has 512 GB. 
+As for the computational cost, the scaling is N^3 for DFT, N^4 I assume for GW GPP. 
+I assume N^5 for BSE? I guess my calcualtions are goign to be off, but at least based on that you 
+can estimate the node hour proportions give n the 1300 node hours that I used. Among the tasks. 
+
+As for anticipated resource use, there will be more use for other systems that can be investigated 
+and possible doping related effects in the supercell. The usage might be intermittent based on running 
+calculations and analyzing the results. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\subsection{Application Parallel Performance}
+
+Things to answer:
+\begin{itemize}
+\item Summarize the performance (percent of peak, scalability) of your project’s production application used in the allocations this year
+\item What progress was made on improving application's performace on this architecture. 
+\item What challenges remain? Were they anticipated?
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+For gathering inputs, since BGW scales well on Frontier, and since finite momentum calculatiosn can 
+be split up and batched, we used that to parallelize and run in Frontier. AS for the self-energgy computations, 
+the code developemtn involved some parallelization on the system. 
+
+petsc and slepc along with petsc4py and slepc4py was compiled on Frontier. This allowed to create 
+distributed GPU arrays and matrices easily, as petsc and slepc can be compied with rocm/hip on frontier. 
+Then the diagonaliation can also be done efficienly using distributed slepc4py package. 
+On top of that, the Q points were aslo parallelized when doing the self-enerfgy calculations. This 
+was the compitation was parllelized better on the Frontier systems to be able to run on 4, 6, 8 size 
+grids. 
+
+It would be nice to parallelize the DFPT part on Frontier, as it involves Quantum espresso that does not 
+seem to be able to compile or we were not able to find a version that works on the Frontier AMD GPus. 
+But finding some progress on that would speed up calculations more and solve another computational challenge. 
+But since this would be a major effort and too far fromt he scope of the project, this is not attempted to be solved. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\subsection{Data Storage}
+
+Things to answer:
+\begin{itemize}
+\item Cumulative data storage. 
+\item Projection on cumulative data for future. 
+\item Tools/plans to reduce data. 
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+You can estimat ethe data storage, but roughly in a few TB right? Especially for the supercell part.
+Tools and plans would be to use hsi to be able to move compressed tar versions of the files to long term storage. 
+Maybe AI can suggest something here, or keep this brief. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\section{Project Plans for Next Year}
+
+\subsection{Summarize the project plans}
+
+Things to answer:
+\begin{itemize}
+\item What advances I plan to accomplish through the next award period. 
+\item Associate the above with overarching goals of project. 
+\item If resource requirements differ for future, provide details.
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+I think based on my initial etnry on can fill stuff here right? based on wrirign in the Significant accomplishment 
+to date section. One can also read the 2026_incite_proposal.pdf of which part my_part*.pdf on self-trapped excitons 
+ans stuff should give an idea too. Based on this the resource requirements and stuff can be seen. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\subsection{Development work}
+
+Things to answer:
+\begin{itemize}
+\item Describe development work carried out as part of this project. 
+\item Any additional development work if will need to be completed. 
+\item Estimate of percent of project time spent on developing. 
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+So again, stuff form the Significant accomplishments section can be copied here. Actually, They need
+to only occur here lol. I think there might be additional development for analysis mostly and 
+to be able to write papers. Percent of project tme spent on developing might be a lot. Close 
+to 70 percent? Would that be a good estimate to state? Cause that involved debugging, 
+testing, and developing the code. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\subsection{New Code applications}
+
+Things to answer:
+\begin{itemize}
+\item Any plans to use production code in the next year? Or new resource. 
+\item Provide if new, the resource parallel info. 
+\item Scaling and performance data in either strong or weak scaling mode should be provided.
+\item For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics.
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+Yes, the prod code for new systems, and analysis, and convergence, and doping. Fill the others 
+if needed. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+\section{Publications Resulting from this INCITE work}
+
+Things to answer:
+\begin{itemize}
+\item List Papers from this. Only ones with INCITE cited will be included. (I have none, only anticipated ones under preparation). 
+\end{itemize}
+
+My input, in rough non-polished words, not necessarily logical order: 
+No publication yet. But couple planned that involve the developements so far. For the dynamical and temperature 
+effects of STE on PL spectar and the excited state forces constraed siwht self-energies for Cs2AgInCl6, a doible
+perovskite. 
+
+TODO: AI cleaup and retructuing and stuff based on requirements and my info dump and context. 
+
+
+Note for AI: Note that you can modify things as much as you want to be able to get things flowing logically and 
+move things to appropriate sections, so that things flow well and meet the goals needed. 
+
+\end{document}

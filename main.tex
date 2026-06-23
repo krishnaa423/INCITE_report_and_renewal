@@ -1,18 +1,22 @@
 \documentclass{article}
 
-%packages
+% packages
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{enumitem}
 
-%settings
+% settings
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
+    urlcolor=blue,
 }
 \geometry{
     margin=1in,
 }
-\title{INCITE report and renewal}
+\setlist[itemize]{leftmargin=1.3em}
+
+\title{INCITE Report and Renewal Contribution}
 \author{Krishnaa Vadivel}
 \date{}
 
@@ -21,152 +25,275 @@
 \maketitle
 \tableofcontents
 
-
-\section{Requirements}
-
-
-\subsection{Email contents from Zhenglu Li}
-
-
-Zhenglu Li
-Attachments
-Jun 10, 2026, 1:54 PM (13 days ago)
-to Weichen, Gurjyot, Shang, me, Jinyuan, Aaron, Emily, Stephen, Zui, Jimy, Zien, Chih, Steven, Jeffrey, Diana, Felipe, Mauro, Zhenglu
-
-Dear All,
-
-Our INCITE project now requires the submission of a renewal proposal for the resources of the second year (2027) as the standard procedure.  I would like to thank you in advance for your help and kindly ask for input for the renewal proposal, by June 26, Friday.  If the point of contact in your group has changed, please kindly let me know.
-
-Detailed instructions can be found here: https://doeleadershipcomputing.org/proposal-renewal-instructions/ .  At the end of the email, I will highlight some key instructions. 
-
-In preparing your input, please weigh Achievements vs. Plans for next year with a ~2:1 ratio.  In your input, please include 1. Project Achievements, 2. Project Plans for Next Year, 3. Publications Resulting from INCITE Awards, along with references.
-
-I attach our proposal from last year for reference of proposed research and milestones.  If you have any questions, please feel free to let me know.  Thank you again for your very kind help and support!
-
-Best,
-Zhenglu
-
-Link: https://doeleadershipcomputing.org/proposal-renewal-instructions/
-
-
-\subsection{More instructions}
-
-============== Key Information from Instructions on Renewal Proposal ==============
-
-Project Achievements: The Project Achievements should address the following points. This section is typically about 10 pages.
-Significance of Accomplishments to Date: Explain what advances you accomplished through the INCITE award (e.g., impact on community paradigms, valuable insights into or solving a long-standing challenge). Place the proposed research in the context of competing work in your discipline or business. Reiterate the milestones of your proposal and discuss the accomplishments (planned or unplanned) achieved this year relative to those milestones and allocation use. Summarize the impact of the results achieved: What conclusions can be drawn and what is solved because of these results? What new and follow-on investigations have these results motivated?
-Allocation Use: Summarize your project’s allocation use to-date this year: percent of allocated node-hours used on each platform, job size distribution, number of users, etc. Associate the resource use with particular results where possible. Also summarize your project’s projected use from now until the end of December (i.e., end of current allocation year): anticipated percent of allocated node-hours used on each platform, job size distribution, etc. Associate this resource usage with anticipated results. Do you expect your usage to be evenly distributed throughout the remainder of this year? If not, explain. 
-Application Parallel Performance: Summarize the performance (percent of peak, scalability) of your project’s production application used in the allocations this year. What progress was made in improving the application’s performance on this architecture? What challenges (if any) remain? List the technical risks and challenges that were confronted by your project (overcome or not) this year. Were they anticipated? 
-Data Storage: What is the current cumulative size of stored data? What is your projection for the cumulative size of stored data at the end of the project? What tools and/or plans do you have to reduce the data? To share the data?  The LCF data management policies can be found at:
-ALCF: http://www.alcf.anl.gov/user-guides/data-policy
-OLCF: https://www.olcf.ornl.gov/for-users/olcf-policy-guide/
-
-Project Plans for Next Year: The Project Plans should address the following points. This section is typically about 4 pages.
-Summarize the Project Plans: Briefly explain what advances you expect to accomplish through the next award period and associate these with the overarching goals of your project. Clearly explain the relationships between the milestones, planned production simulations, and expected compute time required for these sets of simulations. Explain any change in the scope of the project (research objectives, computational approach, personnel, etc.) relative to the plans and approach articulated in the original proposal. If resource requirements differ from those of the previous year, provide details on the differences (platform, increased/decreased node-hours, file system and archival storage, networking) and the reasons for them. If you are requesting a new resource, you must provide evidence that your project is optimized to run on that resource. See the New Code Applications section below. Summarize the requirements that are driving the differences and what science/technology outcomes are expected. Significant changes to the original project scope should be discussed with the INCITE Program Manager prior to submittal.
-Development Work: Describe what, if any, development work has been carried out and the outcome of this work. Describe what additional development work will be executed, and when. Provide an estimate for the percentage of project time you will spend on development computing (i.e., porting, performance analysis) and other nonproduction runs.
-New Code Applications (where relevant): Are you planning to use any new production codes next year that were not included in your original proposal? Or are you proposing use of a new resource not included in your original proposal? If so, provide direct evidence, including supporting quantitative data, for your production application's parallel performance for the intended research simulations and analysis. Ideally, the proposing team will have generated the data. If you cite work by others, explain why it is applicable here. You should use the application code you intend for the production work, not a related code. Data for sample systems not related to the intended research is undesirable. Scaling and performance data in either strong or weak scaling mode should be provided. Explain how the strong or weak scaling applies to the proposed work. For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics. See the examples at the end of this page.
-NOTE: You may apply for a startup account at one of the centers to conduct performance studies. Director’s Discretion applications are available at
-ALCF: https://www.alcf.anl.gov/science/directors-discretionary-allocation-program
-OLCF: https://my.olcf.ornl.gov/project-application-new
-
-Publications Resulting from INCITE Awards: Provide a list of publications resulting from your current and previous INCITE awards to this project team for work related to the proposal under consideration. Only those publications that include an acknowledgement to INCITE and/or the LCF may be included. This list may not be used in lieu of references in Section 1, “Project Achievements and Plans.” If applicable, list the citations in both Sections 1 and 2. (Does not count toward the 14-page Project Achievements and Plans limit).
-
-
-
 \section{Project Achievements}
 
-\subsection{Significant Accomplishments to date}
+\subsection{Significant Accomplishments to Date}
 
-Things to answer:
+This INCITE allocation has produced a working first principles framework for
+self trapped excitons (STEs), along with the main calculations needed to apply
+and test it. The central advance is a practical link between excited-state forces
+and exciton self-energy theory. This link makes the STE relaxation problem more
+stable and gives access to dynamical quantities that are not available from
+forces alone.
+
+The main accomplishments are:
+
 \begin{itemize}
-\item Advances accomplished. 
-\item Impact on community paradigms. 
-\item Valuable insights into some long standing challenge. 
-\item Reiterate milestones of proposal and accomplishments (planned and unplanned). 
-\item Impact of results achieved. 
-\item What new and follow-on investigations have these results motivated. 
+    \item A self consistent exciton self-energy implementation was developed for
+        STE analysis, including tadpole and Fan Migdal contributions.
+    \item Finite momentum exciton data were generated for \(\mathrm{LiF}\),
+        \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\) across the main grid
+        sizes needed for convergence and extrapolation.
+    \item The self-energy distortion provided an effective starting point for
+        the excited-state forces method in \(\mathrm{Cs_2AgInCl_6}\), reducing
+        the number of costly trial force iterations.
+    \item The work established a direct comparison between harmonic self-energy
+        theory and nonlinear relaxation with excited-state forces.
+    \item The method now gives access to phonon resolved contributions,
+        temperature dependent emission broadening, and first principles estimates
+        of the Stokes shift.
 \end{itemize}
 
-TODO
+The broader significance is that the project has moved from method setup to a
+usable route for temperature dependent STE photoluminescence from first
+principles. This is difficult because STEs combine strong exciton phonon
+coupling, lattice relaxation, large distortions, and optical spectra.
+Excited-state forces can describe the relaxed structure, but they do not directly
+give dynamical temperature dependence. The self-energy method fills that gap and
+improves the starting point for the force calculation.
 
-\subsection{Allocation use}
+The calculation campaign is already broad. Benchmark calculations were completed
+on \(\mathrm{LiF}\) and \(\mathrm{SiO_2}\), which have prior STE studies and, for
+\(\mathrm{SiO_2}\), useful experimental reference data. The same workflow was
+then extended to the target double perovskite, \(\mathrm{Cs_2AgInCl_6}\). For
+each material, finite momentum exciton calculations were performed on \(2 \times
+2 \times 2\), \(4 \times 4 \times 4\), \(6 \times 6 \times 6\), and \(8 \times 8
+\times 8\) grids, followed by extrapolation toward the dense grid limit. The
+inputs came from DFT, DFPT, EPW, and BerkeleyGW \(GW\) plus Bethe Salpeter
+equation calculations.
 
-Things to answer:
+The combined method was motivated by the \(\mathrm{Cs_2AgInCl_6}\) production
+runs. Repeated iterations in the excited-state forces method were costly, and
+some trial distortions led to slow or oscillatory convergence. This suggests that
+the STE energy landscape can contain barriers or competing local minima. Toy
+models with Fr\"ohlich type coupling support the same picture: STE formation
+balances the momentum dependent kinetic energy of the exciton against the energy
+gained from lattice distortion. A good initial distortion is therefore part of
+the physics of the calculation, not only a numerical convenience.
+
+To address this, we developed an exciton self-energy approach based on tadpole
+and Fan Migdal diagrams. The tadpole term was solved self consistently. The
+resulting lattice distortion then served as a physically motivated starting point
+for the excited-state forces method. The two methods are complementary. The
+self-energy method captures harmonic lattice response and dynamical effects. The
+excited-state forces method captures the nonlinear static relaxation. Together,
+they reduce the dependence on arbitrary starting distortions.
+
+The remaining work is now mainly analysis. The completed calculations motivate
+two follow on questions. What barriers control STE formation in
+\(\mathrm{Cs_2AgInCl_6}\)? When is harmonic self-energy theory sufficient, and
+when is full nonlinear relaxation needed? Comparing \(\mathrm{LiF}\),
+\(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\) will help answer both
+questions.
+
+\subsection{Allocation Use}
+
+About 1,300 node hours have been used to date by \texttt{krishnaa423}. The time
+supported the main calculation campaign: finite momentum exciton inputs,
+development and tests of the STE self-energy code, production self-energy runs,
+and calculations with excited-state forces for \(\mathrm{Cs_2AgInCl_6}\). Usage
+was not uniform because the work alternated between production runs, code
+validation, and analysis.
+
+The approximate breakdown is:
+
 \begin{itemize}
-\item Percent of allocated node hours used. 
-\item Job size distribution. 
-\item Number of users. 
-\item Associate resource use with particular results if possible (can be less strict about this). 
-\item Allocated node hours used. 
-\item Possible usage and anticipated resource use with results. 
-\item Resource use to be even throughout the year? Explain. 
+    \item About 45 percent for DFT, DFPT, EPW, \(GW\), and BSE input generation
+        for \(\mathrm{LiF}\), \(\mathrm{SiO_2}\), and
+        \(\mathrm{Cs_2AgInCl_6}\).
+    \item About 25 percent for code development, debugging, and benchmarking,
+        mainly using \(\mathrm{LiF}\) as the first test case.
+    \item About 20 percent for production self-energy calculations and convergence
+        studies.
+    \item About 10 percent for calculations with excited-state forces in
+        \(\mathrm{Cs_2AgInCl_6}\), including tests of the self-energy based
+        initial distortion.
 \end{itemize}
 
-TODO
+Job sizes varied by calculation type. BerkeleyGW finite momentum exciton
+calculations were batched over momentum points and grid sizes. The self-energy
+calculations used distributed linear algebra and parallelism over momentum
+points. Memory needs were set by matrices with dimensions of roughly \(10^5\) for
+normal cell calculations and up to roughly \(10^7\) effective degrees of freedom
+for larger supercell related objects. Frontier's 512 GB per node was important
+for distributing these data.
+
+For the rest of the current allocation year, additional time will be used mainly
+for final checks, analysis driven reruns, and any targeted
+\(\mathrm{Cs_2AgInCl_6}\) refinement needed after inspecting the current results.
+Related materials or defect and doping configurations may be tested if the
+analysis identifies a clear need. Usage will remain intermittent, since large
+batches will be launched only after the grid, structure, and initial distortion
+are checked.
 
 \subsection{Application Parallel Performance}
 
-Things to answer:
-\begin{itemize}
-\item Summarize the performance (percent of peak, scalability) of your project’s production application used in the allocations this year
-\item What progress was made on improving application's performace on this architecture. 
-\item What challenges remain? Were they anticipated?
-\end{itemize}
+The production work used established electronic structure codes together with the
+project specific self-energy code. Quantum ESPRESSO and EPW were used for DFT,
+DFPT, and electron phonon inputs. BerkeleyGW was used for \(GW\) and finite
+momentum BSE calculations. BerkeleyGW fits the Frontier workflow well because the
+finite momentum calculations can be split into independent batches, and the
+expensive \(GW\) and BSE stages expose parallelism over bands, transitions, and
+momentum points.
+
+The main progress for the self-energy code was a distributed implementation for
+Frontier. PETSc, SLEPc, petsc4py, and slepc4py were compiled with ROCm and HIP
+support. This allowed distributed arrays and matrices to be built on Frontier and
+allowed SLEPc eigensolvers to be used for diagonalization. The self-energy
+calculation was also parallelized over \(q\) points, which made the \(4 \times 4
+\times 4\), \(6 \times 6 \times 6\), and \(8 \times 8 \times 8\) grid calculations
+more tractable.
+
+The largest performance gain was algorithmic. The self-energy method reduces
+wasted iterations in the excited-state forces method by providing a better
+initial distortion. The implementation also distributes the expensive matrix and
+momentum dependent operations across the machine. This is important for
+\(\mathrm{Cs_2AgInCl_6}\), where each iteration with excited-state forces can
+require DFT, DFPT, \(GW\), and BSE calculations.
+
+The main remaining challenge is DFPT. We have not yet identified a Quantum
+ESPRESSO build that uses Frontier's AMD GPUs effectively for this part of the
+calculation. As a result, input generation remains less accelerated than the
+BerkeleyGW and self-energy stages. This was anticipated, since GPU support is not
+uniform across the full electronic structure stack. Addressing it would require a
+large software effort outside the main scope of this STE theory work.
 
 \subsection{Data Storage}
 
-Things to answer:
-\begin{itemize}
-\item Cumulative data storage. 
-\item Projection on cumulative data for future. 
-\item Tools/plans to reduce data. 
-\end{itemize}
+The current data volume is estimated to be a few terabytes. Most of this comes
+from wave functions, dielectric matrices, electron phonon data, \(GW\) and BSE
+intermediate files, and self-energy outputs for dense grids. The largest storage
+pressure comes from \(\mathrm{Cs_2AgInCl_6}\) and from supercell related
+excited-state forces data.
 
-TODO
+By the end of the current project period, the stored data should remain in the
+several terabyte range if only essential production data are retained. Scratch
+files that can be regenerated will be deleted. The retained data will include
+inputs, final outputs, convergence data, and selected intermediate files needed
+for reproducibility. Completed calculation directories will be compressed and
+moved to long term storage using center supported tools such as \texttt{hsi}.
+Publication data will be reduced to portable files containing structures, phonon
+mode projections, exciton energies, self-energy contributions, spectra, and
+figure scripts.
 
 \section{Project Plans for Next Year}
 
-\subsection{Summarize the project plans}
+\subsection{Summary of Project Plans}
 
-Things to answer:
+The next allocation period will focus on turning the completed calculation
+campaign into final scientific results. The main goal is to connect the existing
+first principles calculations to STE observables: the relaxed distortion, Stokes
+shift, emission linewidth, and temperature dependence of the photoluminescence
+spectrum.
+
+The first priority is analysis of the \(\mathrm{Cs_2AgInCl_6}\) study. The
+self-energy based distortion has provided the starting point for relaxation with
+excited-state forces. Next year will focus on comparing the relaxed structure
+with the harmonic self-energy prediction and quantifying the role of nonlinear
+lattice relaxation.
+
+The second priority is to complete manuscript quality analysis of the
+\(\mathrm{LiF}\) and \(\mathrm{SiO_2}\) benchmarks. These systems provide a
+controlled test of the theory against prior calculations and available
+experimental data. The remaining work is mainly convergence analysis with respect
+to momentum grid, exciton basis, phonon modes, and the tadpole and Fan Migdal
+terms.
+
+The third priority is selective extension. Related materials or defect and doping
+configurations will be pursued only if the current analysis shows that they are
+needed to strengthen the scientific conclusions. Resource needs may increase for
+those cases because the effective problem size grows quickly and the \(GW\) plus
+BSE stages become more expensive.
+
+The planned work is directly tied to the project milestones:
+
 \begin{itemize}
-\item What advances I plan to accomplish through the next award period. 
-\item Associate the above with overarching goals of project. 
-\item If resource requirements differ for future, provide details.
+    \item Finalize convergence analysis for the finite momentum exciton and
+        self-energy calculations on the benchmark and target systems.
+    \item Complete any targeted refinement of the
+        \(\mathrm{Cs_2AgInCl_6}\) excited-state forces result.
+    \item Compute phonon resolved self-energy contributions, Stokes shifts, and
+        temperature dependent emission linewidths.
+    \item Compare harmonic self-energy predictions with nonlinear results from
+        excited-state forces to define the accuracy and limits of the method.
+    \item Prepare manuscripts on temperature dependent STE emission and the
+        self-energy guided \(\mathrm{Cs_2AgInCl_6}\) study.
 \end{itemize}
 
-TODO
+No major change in scope is planned. The approach is now more integrated than
+originally envisioned because the self-energy method is used both for dynamical
+STE properties and for improving convergence of the excited-state forces method.
 
-\subsection{Development work}
+\subsection{Development Work}
 
-Things to answer:
+Substantial development was completed during the current allocation period. The
+main effort was the theory and implementation of the STE self-energy method,
+including the self consistent tadpole term, the Fan Migdal term, finite momentum
+exciton inputs, and post processing for STE observables. Development also
+included tests on \(\mathrm{LiF}\), debugging, extension to denser grids, and the
+Frontier build of PETSc, SLEPc, petsc4py, and slepc4py with ROCm and HIP support.
+
+About 60 to 70 percent of the current effort went to development, testing, and
+validation because the work required new theory, new code, and a reliable bridge
+to excited-state forces. That development phase is largely complete. Next year's
+allocation should therefore be used mostly for analysis, final convergence
+checks, and manuscript preparation.
+
+Remaining development will focus on robustness and reproducibility. Planned tasks
+include automated convergence checks, a cleaner interface to BerkeleyGW outputs,
+lower memory use for dense grids, and reproducible scripts for spectra,
+linewidths, and mode resolved analysis. Development computing is expected to be
+about 25 percent of next year's use, with the rest directed to analysis and
+targeted production reruns.
+
+\subsection{New Code Applications}
+
+No entirely new production application is planned for next year. The work will
+continue to use Quantum ESPRESSO, EPW, BerkeleyGW, and the project specific STE
+self-energy code. The code stack is already in place; next year's use will focus
+on final analysis, selected reruns, and optional extensions rather than a new
+application path.
+
+The current year's tests provide the relevant performance evidence. The code has
+run on Frontier for \(4 \times 4 \times 4\), \(6 \times 6 \times 6\), and \(8
+\times 8 \times 8\) grids using distributed PETSc and SLEPc objects and
+parallelism over \(q\) points. This maps directly to the proposed calculations,
+where cost grows with the number of momentum points, exciton basis size, and
+self-energy matrix operations. BerkeleyGW also remains suitable because finite
+momentum BSE calculations can be batched over independent momentum points.
+
+If defect or doping calculations are added, the main added requirements will be
+memory and storage. Larger structural cells increase the electronic and excitonic
+basis sizes, and the \(GW\) plus BSE data products grow quickly. The plan is to
+keep the current application stack and use careful batching and data reduction,
+rather than introduce a new untested code path.
+
+\section{Publications Resulting from INCITE Awards}
+
+There are no submitted or published papers yet from this INCITE work that include
+the required INCITE or Leadership Computing Facility acknowledgement. Two
+manuscripts are in preparation from the calculations completed so far:
+
 \begin{itemize}
-\item Describe development work carried out as part of this project. 
-\item Any additional development work if will need to be completed. 
-\item Estimate of percent of project time spent on developing. 
+    \item A paper on the first principles exciton self-energy framework for STEs,
+        including dynamical effects and temperature dependent photoluminescence
+        linewidths.
+    \item A paper on \(\mathrm{Cs_2AgInCl_6}\), using self-energy guided
+        excited-state forces to obtain the STE distortion, Stokes shift, and
+        emission properties of the double perovskite.
 \end{itemize}
 
-TODO
-
-\subsection{New Code applications}
-
-Things to answer:
-\begin{itemize}
-\item Any plans to use production code in the next year? Or new resource. 
-\item Provide if new, the resource parallel info. 
-\item Scaling and performance data in either strong or weak scaling mode should be provided.
-\item For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics.
-\end{itemize}
-
-TODO
-
-\section{Publications Resulting from this INCITE work}
-
-Things to answer:
-\begin{itemize}
-\item List Papers from this. Only ones with INCITE cited will be included. (I have none, only anticipated ones under preparation). 
-\end{itemize}
-
-TODO
+These papers will include the required INCITE and facility acknowledgements when
+submitted.
 
 \end{document}
