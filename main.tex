@@ -3,10 +3,18 @@
 %packages
 \usepackage{hyperref}
 \usepackage{geometry}
-\use
 
 %settings
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+}
+\geometry{
+    margin=1in,
+}
 \title{INCITE report and renewal}
+\author{Krishnaa Vadivel}
+\date{}
 
 \begin{document}
 
@@ -22,7 +30,7 @@
 
 Zhenglu Li
 Attachments
-Jun 10, 2026, 1:54 PM (13 days ago)
+Jun 10, 2026, 1:54 PM (13 days ago)
 to Weichen, Gurjyot, Shang, me, Jinyuan, Aaron, Emily, Stephen, Zui, Jimy, Zien, Chih, Steven, Jeffrey, Diana, Felipe, Mauro, Zhenglu
 
 Dear All,
@@ -54,7 +62,7 @@ OLCF: https://www.olcf.ornl.gov/for-users/olcf-policy-guide/
 Project Plans for Next Year: The Project Plans should address the following points. This section is typically about 4 pages.
 Summarize the Project Plans: Briefly explain what advances you expect to accomplish through the next award period and associate these with the overarching goals of your project. Clearly explain the relationships between the milestones, planned production simulations, and expected compute time required for these sets of simulations. Explain any change in the scope of the project (research objectives, computational approach, personnel, etc.) relative to the plans and approach articulated in the original proposal. If resource requirements differ from those of the previous year, provide details on the differences (platform, increased/decreased node-hours, file system and archival storage, networking) and the reasons for them. If you are requesting a new resource, you must provide evidence that your project is optimized to run on that resource. See the New Code Applications section below. Summarize the requirements that are driving the differences and what science/technology outcomes are expected. Significant changes to the original project scope should be discussed with the INCITE Program Manager prior to submittal.
 Development Work: Describe what, if any, development work has been carried out and the outcome of this work. Describe what additional development work will be executed, and when. Provide an estimate for the percentage of project time you will spend on development computing (i.e., porting, performance analysis) and other nonproduction runs.
-New Code Applications (where relevant): Are you planning to use any new production codes next year that were not included in your original proposal? Or are you proposing use of a new resource not included in your original proposal? If so, provide direct evidence, including supporting quantitative data, for your production application’s parallel performance for the intended research simulations and analysis. Ideally, the proposing team will have generated the data. If you cite work by others, explain why it is applicable here. You should use the application code you intend for the production work, not a related code. Data for sample systems not related to the intended research is undesirable. Scaling and performance data in either strong or weak scaling mode should be provided.  Explain how the strong or weak scaling applies to the proposed work.  For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics.  See the examples at the end of this page.
+New Code Applications (where relevant): Are you planning to use any new production codes next year that were not included in your original proposal? Or are you proposing use of a new resource not included in your original proposal? If so, provide direct evidence, including supporting quantitative data, for your production application's parallel performance for the intended research simulations and analysis. Ideally, the proposing team will have generated the data. If you cite work by others, explain why it is applicable here. You should use the application code you intend for the production work, not a related code. Data for sample systems not related to the intended research is undesirable. Scaling and performance data in either strong or weak scaling mode should be provided. Explain how the strong or weak scaling applies to the proposed work. For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics. See the examples at the end of this page.
 NOTE: You may apply for a startup account at one of the centers to conduct performance studies. Director’s Discretion applications are available at
 ALCF: https://www.alcf.anl.gov/science/directors-discretionary-allocation-program
 OLCF: https://my.olcf.ornl.gov/project-application-new
@@ -144,8 +152,8 @@ Things to answer:
 \begin{itemize}
 \item Any plans to use production code in the next year? Or new resource. 
 \item Provide if new, the resource parallel info. 
-\item Scaling and performance data in either strong or weak scaling mode should be provided. 
-\item For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics.  
+\item Scaling and performance data in either strong or weak scaling mode should be provided.
+\item For data analytics and AI proposals, a description of the compute, memory, networking, and storage needs in the context of the LCF resources will help reviewers understand the strong or weak scaling characteristics.
 \end{itemize}
 
 TODO
