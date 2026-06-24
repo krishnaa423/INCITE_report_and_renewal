@@ -1,0 +1,413 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{luo2018warmwhite}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=8e5e7d22e5fbcb53cb046f5199bbbeb1}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b43baa442e95d644833265799c08ee8d}
+      \strng{fullhash}{b43baa442e95d644833265799c08ee8d}
+      \strng{fullhashraw}{b43baa442e95d644833265799c08ee8d}
+      \strng{bibnamehash}{b43baa442e95d644833265799c08ee8d}
+      \strng{authorbibnamehash}{b43baa442e95d644833265799c08ee8d}
+      \strng{authornamehash}{b43baa442e95d644833265799c08ee8d}
+      \strng{authorfullhash}{b43baa442e95d644833265799c08ee8d}
+      \strng{authorfullhashraw}{b43baa442e95d644833265799c08ee8d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{title}{Efficient and stable emission of warm-white light from lead-free halide double perovskites}
+      \field{volume}{563}
+      \field{year}{2018}
+      \field{pages}{541\bibrangedash 545}
+      \range{pages}{5}
+    \endentry
+    \entry{depaula2025time}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=845b7f2b07c9a55d6ffe03205d3130c6}{%
+           family={Paula},
+           familyi={P\bibinitperiod},
+           given={Ana\bibnamedelima Maria},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=8d10288d630fa70a30980c286b477e2d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shunran},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6c06fb8868324c2b7aa83b48e7909ab8}{%
+           family={Hou},
+           familyi={H\bibinitperiod},
+           given={Bowen},
+           giveni={B\bibinitperiod}}}%
+        {{hash=04b806af4fb340433d0063b2847e3b76}{%
+           family={Vadivel},
+           familyi={V\bibinitperiod},
+           given={Srikrishnaa},
+           giveni={S\bibinitperiod}}}%
+        {{hash=765e6a1efd0bb191787a505c31e60c8f}{%
+           family={Teles-Ferreira},
+           familyi={T\bibinithyphendelim F\bibinitperiod},
+           given={Danielle\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=a47eaea145e1a572469b520956e344f2}{%
+           family={Iudica},
+           familyi={I\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3e3422321d07c22c0b159da7ece92883}{%
+           family={Kabacinski},
+           familyi={K\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=25851aadd261c044546dfc54bb7e08e2}{%
+           family={Hosseini},
+           familyi={H\bibinitperiod},
+           given={Hemen},
+           giveni={H\bibinitperiod}}}%
+        {{hash=84a190108e5b2c01a7d7fa6aa6f78747}{%
+           family={McArthur},
+           familyi={M\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+        {{hash=91d4ad661edd9438b6772408fda98fe3}{%
+           family={Cerullo},
+           familyi={C\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACS Publications}%
+      }
+      \strng{namehash}{757cca19209f66593378ab20f319588b}
+      \strng{fullhash}{75f65f8c196af852d9a925107168e068}
+      \strng{fullhashraw}{75f65f8c196af852d9a925107168e068}
+      \strng{bibnamehash}{757cca19209f66593378ab20f319588b}
+      \strng{authorbibnamehash}{757cca19209f66593378ab20f319588b}
+      \strng{authornamehash}{757cca19209f66593378ab20f319588b}
+      \strng{authorfullhash}{75f65f8c196af852d9a925107168e068}
+      \strng{authorfullhashraw}{75f65f8c196af852d9a925107168e068}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Chemical Society}
+      \field{number}{32}
+      \field{title}{Time-domain observation of ultrafast self-trapped exciton formation in lead-free double halide perovskites}
+      \field{volume}{147}
+      \field{year}{2025}
+      \field{pages}{28923\bibrangedash 28931}
+      \range{pages}{9}
+    \endentry
+    \entry{sahre2026roks}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=c6f7eacc78d7ba74b5b74942d38c72ce}{%
+           family={Sahre},
+           familyi={S\bibinitperiod},
+           given={M.\bibnamedelimi J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dabec3617388feef86e12e038028c6fd}{%
+           family={Romanelli},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5bf283f883694e18d5fd1b56fdb074fd}{%
+           family={Marsman},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f1cbbe11c2cf13537c0da2ccf3292376}{%
+           family={González},
+           familyi={G\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40daea6217342757546b996c2086b7b4}{%
+           family={Kresse},
+           familyi={K\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{39c2c7ed8d86d9837a751265cf181da9}
+      \strng{fullhash}{74a938e36b08a1b67a5fb2338fed19b0}
+      \strng{fullhashraw}{74a938e36b08a1b67a5fb2338fed19b0}
+      \strng{bibnamehash}{39c2c7ed8d86d9837a751265cf181da9}
+      \strng{authorbibnamehash}{39c2c7ed8d86d9837a751265cf181da9}
+      \strng{authornamehash}{39c2c7ed8d86d9837a751265cf181da9}
+      \strng{authorfullhash}{74a938e36b08a1b67a5fb2338fed19b0}
+      \strng{authorfullhashraw}{74a938e36b08a1b67a5fb2338fed19b0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
+      \field{title}{Excited States from Restricted Open Shell Plane-Wave DFT}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2605.28637
+      \endverb
+    \endentry
+    \entry{ismailbeigi2003esf}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=0615d695f87748c13b2987b2b29b987c}{%
+           family={Ismail-Beigi},
+           familyi={I\bibinithyphendelim B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e31bc1082b8cfcbb8b9b3c0c6fb5672d}{%
+           family={Louie},
+           familyi={L\bibinitperiod},
+           given={S.\bibnamedelimi G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{b97f2ec708abea519f74aa497169b185}
+      \strng{fullhash}{b97f2ec708abea519f74aa497169b185}
+      \strng{fullhashraw}{b97f2ec708abea519f74aa497169b185}
+      \strng{bibnamehash}{b97f2ec708abea519f74aa497169b185}
+      \strng{authorbibnamehash}{b97f2ec708abea519f74aa497169b185}
+      \strng{authornamehash}{b97f2ec708abea519f74aa497169b185}
+      \strng{authorfullhash}{b97f2ec708abea519f74aa497169b185}
+      \strng{authorfullhashraw}{b97f2ec708abea519f74aa497169b185}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{title}{Excited-State Forces within a First-Principles Green's Function Formalism}
+      \field{volume}{90}
+      \field{year}{2003}
+      \field{pages}{076401}
+      \range{pages}{1}
+    \endentry
+    \entry{delgrande2025esf}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9c416c0cf05d24e7b09e495c305f372c}{%
+           family={Del\bibnamedelima Grande},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={R.\bibnamedelimi R.},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=c33bd90d8702d61b1e1af89036bee5cd}{%
+           family={Strubbe},
+           familyi={S\bibinitperiod},
+           given={D.\bibnamedelimi A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{fullhash}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{fullhashraw}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{bibnamehash}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{authorbibnamehash}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{authornamehash}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{authorfullhash}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \strng{authorfullhashraw}{7adbb38a93d0a3bdc918e7eeeb107d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
+      \field{title}{Revisiting ab-initio excited state forces from many-body Green's function formalism: approximations and benchmark}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2502.05144
+      \endverb
+    \endentry
+    \entry{dai2024theory}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9f326f7a7337756cfbb26c59a1d7bdb5}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=3ee160d611fd45a5f3eb69a161b63d15}{%
+           family={Lian},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=00b46d27565002378b70908a60183397}{%
+           family={Lafuente-Bartolome},
+           familyi={L\bibinithyphendelim B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3321154dc40332ddab7a6777887f8ac2}{%
+           family={Giustino},
+           familyi={G\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{fullhash}{1da9440d6109cf2bee5480b2b2676200}
+      \strng{fullhashraw}{1da9440d6109cf2bee5480b2b2676200}
+      \strng{bibnamehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{authorbibnamehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{authornamehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{authorfullhash}{1da9440d6109cf2bee5480b2b2676200}
+      \strng{authorfullhashraw}{1da9440d6109cf2bee5480b2b2676200}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
+      \field{title}{Theory of excitonic polarons: From models to first-principles calculations}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2401.09369
+      \endverb
+    \endentry
+    \entry{dai2024firstprinciples}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9f326f7a7337756cfbb26c59a1d7bdb5}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=3ee160d611fd45a5f3eb69a161b63d15}{%
+           family={Lian},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=00b46d27565002378b70908a60183397}{%
+           family={Lafuente-Bartolome},
+           familyi={L\bibinithyphendelim B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3321154dc40332ddab7a6777887f8ac2}{%
+           family={Giustino},
+           familyi={G\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{fullhash}{1da9440d6109cf2bee5480b2b2676200}
+      \strng{fullhashraw}{1da9440d6109cf2bee5480b2b2676200}
+      \strng{bibnamehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{authorbibnamehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{authornamehash}{6d733d74071a766f7a3dc99e283e8585}
+      \strng{authorfullhash}{1da9440d6109cf2bee5480b2b2676200}
+      \strng{authorfullhashraw}{1da9440d6109cf2bee5480b2b2676200}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
+      \field{title}{Excitonic polarons and self-trapped excitons from first-principles exciton-phonon couplings}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2401.09363
+      \endverb
+    \endentry
+    \entry{singh2024ultrafast}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c266730e660d435f6d3da3522564fba3}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Rachna},
+           giveni={R\bibinitperiod}}}%
+        {{hash=41443ac47b19edcfdd018fb4f4ec7280}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Ajeet},
+           giveni={A\bibinitperiod}}}%
+        {{hash=07ae5ff55b24b487840d06455cfbbf3d}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Shubham},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d3ff05b25878293bc6098d2559609016}{%
+           family={Sapra},
+           familyi={S\bibinitperiod},
+           given={Sameer},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACS Publications}%
+      }
+      \strng{namehash}{1fa0ff6417874bb47e1f67d30da35cb4}
+      \strng{fullhash}{b8c68276f21f39153e4549a5d55bba82}
+      \strng{fullhashraw}{b8c68276f21f39153e4549a5d55bba82}
+      \strng{bibnamehash}{1fa0ff6417874bb47e1f67d30da35cb4}
+      \strng{authorbibnamehash}{1fa0ff6417874bb47e1f67d30da35cb4}
+      \strng{authornamehash}{1fa0ff6417874bb47e1f67d30da35cb4}
+      \strng{authorfullhash}{b8c68276f21f39153e4549a5d55bba82}
+      \strng{authorfullhashraw}{b8c68276f21f39153e4549a5d55bba82}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nano Letters}
+      \field{number}{22}
+      \field{title}{Ultrafast dynamics of self-trapped excitons in Cs2AgInCl6: Al3+ double perovskite nanocrystals}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{pages}{6797\bibrangedash 6804}
+      \range{pages}{8}
+    \endentry
+    \entry{antonius2022theory}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=da1f3bc8f7a6deaccc1231f6fa80060d}{%
+           family={Antonius},
+           familyi={A\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=033bd00ce6a0abe28043361e6118cbe9}{%
+           family={Louie},
+           familyi={L\bibinitperiod},
+           given={Steven\bibnamedelima G},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{fullhash}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{fullhashraw}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{bibnamehash}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{authorbibnamehash}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{authornamehash}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{authorfullhash}{d18e2b5255f136928acfbbb08b4b771b}
+      \strng{authorfullhashraw}{d18e2b5255f136928acfbbb08b4b771b}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review B}
+      \field{number}{8}
+      \field{title}{Theory of exciton-phonon coupling}
+      \field{volume}{105}
+      \field{year}{2022}
+      \field{pages}{085111}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

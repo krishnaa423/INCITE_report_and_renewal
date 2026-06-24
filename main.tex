@@ -1,9 +1,12 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 
 % packages
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
 
 % settings
 \hypersetup{
@@ -17,7 +20,7 @@
 \setlist[itemize]{leftmargin=1.3em}
 
 \title{INCITE Report and Renewal Contribution}
-\author{Krishnaa Vadivel}
+\author{Qiu Group}
 \date{}
 
 \begin{document}
@@ -29,271 +32,318 @@
 
 \subsection{Significant Accomplishments to Date}
 
-This INCITE allocation has produced a working first principles framework for
-self trapped excitons (STEs), along with the main calculations needed to apply
-and test it. The central advance is a practical link between excited-state forces
-and exciton self-energy theory. This link makes the STE relaxation problem more
-stable and gives access to dynamical quantities that are not available from
-forces alone.
+The INCITE allocation helped make advances in theoretical and computational
+methods used to study self-trapped excitons (STEs) from first-principles
+calculations. STEs have been shown to cause broadband white light emission in
+certain double perovskites, showing coupling to phonons, Stokes shifts, and broad
+emission peaks \cite{luo2018warmwhite,depaula2025time}. Being able to explain
+this type of emission from first-principles calculations would help connect the
+measured spectra to lattice distortions, phonon modes, and exciton-phonon
+coupling parameters.
 
-The main accomplishments are:
+\subsubsection{Previous Methods and Challenges}
 
+There are several ways to study STEs, but each method has
+either computational challenges or methodological limitations.
+The methods in the literature can be grouped
+into three main approaches:
 \begin{itemize}
-    \item A self consistent exciton self-energy implementation was developed for
-        STE analysis, including tadpole and Fan Migdal contributions.
-    \item Finite momentum exciton data were generated for \(\mathrm{LiF}\),
-        \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\) across the main grid
-        sizes needed for convergence and extrapolation.
-    \item The self-energy distortion provided an effective starting point for
-        the excited-state forces method in \(\mathrm{Cs_2AgInCl_6}\), reducing
-        the number of costly trial force iterations.
-    \item The work established a direct comparison between harmonic self-energy
-        theory and nonlinear relaxation with excited-state forces.
-    \item The method now gives access to phonon resolved contributions,
-        temperature dependent emission broadening, and first principles estimates
-        of the Stokes shift.
+\item Restricted Open-Shell Kohn-Sham method \cite{sahre2026roks}.
+\item Excited-state forces \cite{ismailbeigi2003esf,delgrande2025esf}.
+\item Minimization under the harmonic lattice approximation
+    \cite{dai2024theory,dai2024firstprinciples}.
 \end{itemize}
 
-The broader significance is that the project has moved from method setup to a
-usable route for temperature dependent STE photoluminescence from first
-principles. This is difficult because STEs combine strong exciton phonon
-coupling, lattice relaxation, large distortions, and optical spectra.
-Excited-state forces can describe the relaxed structure, but they do not directly
-give dynamical temperature dependence. The self-energy method fills that gap and
-improves the starting point for the force calculation.
+ROKS has been shown to describe STE states from density-functional theory (DFT)
+\cite{sahre2026roks}. This can describe an excited-state structure by fixing
+occupations, but it does not explain all effects that come from electron-hole
+correlations in excitons.
 
-The calculation campaign is already broad. Benchmark calculations were completed
-on \(\mathrm{LiF}\) and \(\mathrm{SiO_2}\), which have prior STE studies and, for
-\(\mathrm{SiO_2}\), useful experimental reference data. The same workflow was
-then extended to the target double perovskite, \(\mathrm{Cs_2AgInCl_6}\). For
-each material, finite momentum exciton calculations were performed on \(2 \times
-2 \times 2\), \(4 \times 4 \times 4\), \(6 \times 6 \times 6\), and \(8 \times 8
-\times 8\) grids, followed by extrapolation toward the dense grid limit. The
-inputs came from DFT, DFPT, EPW, and BerkeleyGW \(GW\) plus Bethe Salpeter
-equation calculations.
+Other methods account for electron-hole correlations by using excitons from the
+Bethe-Salpeter Equation (BSE) under the GW approximation. Excited-state forces
+(ESF) compute forces from these excitons and use them to relax the system into
+the STE state \cite{ismailbeigi2003esf,delgrande2025esf}. ESF can capture the
+large lattice distortion that forms an STE, including non-harmonic effects.
+However, the calculation is expensive, especially in supercells, and it can
+depend strongly on the initial lattice displacement used in the relaxation
+process. A third approach is to minimize the exciton energy under a harmonic
+lattice approximation \cite{dai2024theory,dai2024firstprinciples}. This is
+computationally less expensive as it does not require a supercell, but it misses
+non-harmonic lattice distortions.
 
-The combined method was motivated by the \(\mathrm{Cs_2AgInCl_6}\) production
-runs. Repeated iterations in the excited-state forces method were costly, and
-some trial distortions led to slow or oscillatory convergence. This suggests that
-the STE energy landscape can contain barriers or competing local minima. Toy
-models with Fr\"ohlich type coupling support the same picture: STE formation
-balances the momentum dependent kinetic energy of the exciton against the energy
-gained from lattice distortion. A good initial distortion is therefore part of
-the physics of the calculation, not only a numerical convenience.
+One major limitation of all these methods is that they do not provide a way to
+calculate the temperature dependence of STE properties, which has been observed
+experimentally in \(\mathrm{Cs_2AgInCl_6}\) \cite{singh2024ultrafast}.
 
-To address this, we developed an exciton self-energy approach based on tadpole
-and Fan Migdal diagrams. The tadpole term was solved self consistently. The
-resulting lattice distortion then served as a physically motivated starting point
-for the excited-state forces method. The two methods are complementary. The
-self-energy method captures harmonic lattice response and dynamical effects. The
-excited-state forces method captures the nonlinear static relaxation. Together,
-they reduce the dependence on arbitrary starting distortions.
+In this project, we made methodological developments and addressed
+computational challenges based on these methods in the literature. The work
+can be roughly grouped into two main points:
+\begin{itemize}
+\item Developing a many-body perturbation theory description of
+STEs to explain temperature-dependent effects. This
+includes approximating the energies using tadpole and Fan Migdal diagrams,
+together with code development with partial self-consistency to obtain STE
+states under the harmonic approximation.
+\item Reducing the computational cost of ESF by using a better initial guess
+from the self-energy method.
+\end{itemize}
 
-The remaining work is now mainly analysis. The completed calculations motivate
-two follow on questions. What barriers control STE formation in
-\(\mathrm{Cs_2AgInCl_6}\)? When is harmonic self-energy theory sufficient, and
-when is full nonlinear relaxation needed? Comparing \(\mathrm{LiF}\),
-\(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\) will help answer both
-questions.
+\subsubsection{Self-Energy Method Development}
+
+We developed partially self-consistent self-energy formulations to describe
+STE states, extending prior treatments of exciton-phonon coupling and
+excitonic polarons \cite{antonius2022theory,dai2024theory,dai2024firstprinciples}.
+The tadpole and Fan Migdal diagrams give a Dyson-like equation for the STE
+states, which is then solved with partial self-consistency.
+
+The tadpole diagram captures the static lattice distortion driven by the
+exciton. The Fan Migdal term gives access to temperature-dependent effects that
+minimization methods miss. Together, within the harmonic approximation, they
+yield the phonon modes contributing to the STE emission peak and the
+temperature dependence of the peak width.
+
+Theory and code development consumed a large part of the allocation. Both
+self-energy terms had to be implemented, debugged, and tested. Only the lowest
+eigenvalues and eigenvectors of the self-energy matrix were computed, targeting
+the low-energy STE states. Parallelization details are discussed in
+Section~\ref{sec:performance}.
+
+The method was first benchmarked on \(\mathrm{LiF}\) and \(\mathrm{SiO_2}\),
+which have prior STE results in the literature and, for \(\mathrm{SiO_2}\),
+experimental data. The quantities used for comparison included the STE energy,
+the projection of the STE wavefunction onto exciton and phonon band states, and
+the real-space localization of the wavefunction. These benchmarks identified the
+phonon modes most responsible for STE formation and showed how the exciton
+localizes in the STE state. The method was then applied to
+\(\mathrm{Cs_2AgInCl_6}\). Compared to \(\mathrm{LiF}\),
+\(\mathrm{Cs_2AgInCl_6}\) shows a stronger Fan Migdal contribution, driven by a
+lower-energy optical mode that couples more strongly with the exciton: the
+relevant phonon mode is around 15~meV in \(\mathrm{Cs_2AgInCl_6}\), compared to
+around 60~meV in \(\mathrm{LiF}\).
+
+Finite-momentum exciton calculations were carried out for all three materials, 
+\(\mathrm{LiF}\), \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\), on \(2 \times 2 \times 2\), \(4 \times 4 \times 4\),
+\(6 \times 6 \times 6\), and \(8 \times 8 \times 8\) grids, using Quantum
+ESPRESSO for DFT, DFPT, and EPW calculations, and BerkeleyGW for GW and
+GW-BSE calculations. These inputs were needed at each grid size
+to extrapolate convergence toward an infinite grid limit. 
+
+\subsubsection{Excited-State Forces and STE Relaxation}
+
+The ESF method was introduced by Ismail-Beigi and Louie \cite{ismailbeigi2003esf}
+and further developed by Del Grande and Strubbe \cite{delgrande2025esf}. ESF
+calculations on \(\mathrm{LiF}\) and \(\mathrm{SiO_2}\) were used to validate
+the workflow against prior literature results. For \(\mathrm{Cs_2AgInCl_6}\),
+however, convergence difficulties
+arose: some starting distortions led to slow convergence or oscillations. Since
+each ESF step requires expensive electronic-structure work, repeatedly trying
+different starting distortions is not practical. The self-energy calculation
+gives a better initial guess, which reduced the number of ESF iterations needed
+and made the calculation feasible on Frontier.
+
+Each ESF iteration for \(\mathrm{Cs_2AgInCl_6}\) involved a full sequence of
+DFT, DFPT, EPW, GW, and BSE calculations on a \(3\times3\times3\) supercell.
+The initial lattice distortion for the first step was taken directly from the
+self-energy calculation, ensuring a starting point tied to the STE rather than
+an arbitrary displacement. At each subsequent step, the distortion is updated
+from the forces computed in the previous iteration.
+
+The quantities extracted from the ESF calculation are the total energy change
+relative to the undistorted structure and the final electronic wavefunction,
+which is compared against the exciton state to assess how much the STE state
+resembles the original exciton and how it has changed due to the lattice
+relaxation.
+
+\subsubsection{Main Accomplishments and Impact}
+
+The main work completed to date is:
+
+\begin{itemize}
+    \item A partially self-consistent Dyson-like equation with tadpole and Fan
+        Migdal contributions was derived and implemented for predicting STE
+        states under the harmonic approximation.
+    \item The code was used to calculate STE states in \(\mathrm{LiF}\),
+        \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\).
+    \item The self-energy distortion was used as the initial guess for ESF
+        calculations on \(\mathrm{Cs_2AgInCl_6}\), improving convergence
+        and reducing computational cost.
+    \item Properties including the Stokes shift, temperature dependence of the
+        emission peak width, real-space STE wavefunction, and projection of the
+        STE onto exciton and phonon components were computed to characterize
+        STE behavior.
+\end{itemize}
+
+The methods developed here are general and can be applied to study STE states
+in a wide range of materials, including two-dimensional systems and
+Ruddlesden-Popper phases, where exciton-phonon coupling and self-trapping are
+also of interest.
 
 \subsection{Allocation Use}
 
-About 1,300 node hours have been used to date by \texttt{krishnaa423}. The time
-supported the main calculation campaign: finite momentum exciton inputs,
-development and tests of the STE self-energy code, production self-energy runs,
-and calculations with excited-state forces for \(\mathrm{Cs_2AgInCl_6}\). Usage
-was not uniform because the work alternated between production runs, code
-validation, and analysis.
+\subsubsection{Usage to Date}
 
-The approximate breakdown is:
+About 1,270 node hours have been used to date on Frontier by user
+\texttt{krishnaa423}. Initially a lot of time was spent in
+code development, debugging, and close analysis of intermediate results 
+before running larger calculations. Table~\ref{tab:allocation}
+shows the approximate breakdown by activity.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Activity}} & \multicolumn{1}{c|}{\textbf{Node-Hour \%}} & \multicolumn{1}{c|}{\textbf{Systems}} \\
+\hline
+Self-energy code development, debugging, testing & $\sim$20\% &
+    \(\mathrm{LiF}\) (primary test case) \\
+\hline
+Finite-momentum exciton input generation & $\sim$30\% &
+    \(\mathrm{LiF}\), \(\mathrm{SiO_2}\), \(\mathrm{Cs_2AgInCl_6}\) \\
+\hline
+ESF iterations (DFT, DFPT, EPW, GW, BSE cycles) & $\sim$50\% &
+    \(\mathrm{Cs_2AgInCl_6}\) \\
+\hline
+\end{tabular}
+\caption{Approximate node-hour breakdown on Frontier.}
+\label{tab:allocation}
+\end{table}
 
 \begin{itemize}
-    \item About 45 percent for DFT, DFPT, EPW, \(GW\), and BSE input generation
-        for \(\mathrm{LiF}\), \(\mathrm{SiO_2}\), and
-        \(\mathrm{Cs_2AgInCl_6}\).
-    \item About 25 percent for code development, debugging, and benchmarking,
-        mainly using \(\mathrm{LiF}\) as the first test case.
-    \item About 20 percent for production self-energy calculations and convergence
-        studies.
-    \item About 10 percent for calculations with excited-state forces in
-        \(\mathrm{Cs_2AgInCl_6}\), including tests of the self-energy based
-        initial distortion.
+    \item \textbf{Self-energy code development, debugging, and testing
+        ($\sim$20\%):} Initial implementation and validation of the self-energy
+        code was done primarily on \(\mathrm{LiF}\), including debugging,
+        benchmarking against literature results, and testing parallelization.
+    \item \textbf{Finite-momentum exciton input generation ($\sim$30\%):} DFPT
+        and EPW calculations via Quantum ESPRESSO, followed by GW-BSE
+        calculations via BerkeleyGW, were run for
+        \(\mathrm{LiF}\), \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\)
+        on \(2\times2\times2\), \(4\times4\times4\), \(6\times6\times6\), and
+        \(8\times8\times8\) grids. These inputs feed directly into the
+        self-energy calculations.
+    \item \textbf{ESF iterations ($\sim$50\%):} The dominant cost was the ESF
+        calculation on \(\mathrm{Cs_2AgInCl_6}\), which required approximately
+        six full DFT, DFPT, EPW, GW, and BSE cycles. Each iteration is
+        expensive because it involves a complete electronic-structure and BSE
+        calculation at each step.
 \end{itemize}
 
-Job sizes varied by calculation type. BerkeleyGW finite momentum exciton
-calculations were batched over momentum points and grid sizes. The self-energy
-calculations used distributed linear algebra and parallelism over momentum
-points. Memory needs were set by matrices with dimensions of roughly \(10^5\) for
-normal cell calculations and up to roughly \(10^7\) effective degrees of freedom
-for larger supercell related objects. Frontier's 512 GB per node was important
-for distributing these data.
+\subsubsection{Projected Use}
 
-For the rest of the current allocation year, additional time will be used mainly
-for final checks, analysis driven reruns, and any targeted
-\(\mathrm{Cs_2AgInCl_6}\) refinement needed after inspecting the current results.
-Related materials or defect and doping configurations may be tested if the
-analysis identifies a clear need. Usage will remain intermittent, since large
-batches will be launched only after the grid, structure, and initial distortion
-are checked.
+For the remainder of the current allocation year, approximately 2,000 node
+hours are anticipated for computing STE properties on the current systems, 
+\(\mathrm{LiF}\), \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\), along
+with associated code testing and debugging. This includes quantities such as
+exciton projections, phonon contributions, real-space wavefunctions, and
+temperature-dependent linewidths from both methods.
+Following this, time will be spent on
+manuscript preparation before pursuing calculations on new materials such as
+two-dimensional systems or Ruddlesden-Popper phases. Usage will remain
+intermittent rather than evenly spread.
 
 \subsection{Application Parallel Performance}
+\label{sec:performance}
 
-The production work used established electronic structure codes together with the
-project specific self-energy code. Quantum ESPRESSO and EPW were used for DFT,
-DFPT, and electron phonon inputs. BerkeleyGW was used for \(GW\) and finite
-momentum BSE calculations. BerkeleyGW fits the Frontier workflow well because the
-finite momentum calculations can be split into independent batches, and the
-expensive \(GW\) and BSE stages expose parallelism over bands, transitions, and
-momentum points.
+The production work used established electronic-structure codes alongside the
+in-house self-energy code. Quantum ESPRESSO and EPW handled DFT, DFPT, and
+electron-phonon inputs. BerkeleyGW was used for GW and finite-momentum BSE
+calculations. BerkeleyGW parallelizes well over Frontier: the finite-momentum
+calculations over $\mathbf{Q}$ points were split into independent batches, and
+the GW and BSE stages were parallelized over bands and $\mathbf{k}$ points.
 
-The main progress for the self-energy code was a distributed implementation for
-Frontier. PETSc, SLEPc, petsc4py, and slepc4py were compiled with ROCm and HIP
-support. This allowed distributed arrays and matrices to be built on Frontier and
-allowed SLEPc eigensolvers to be used for diagonalization. The self-energy
-calculation was also parallelized over \(q\) points, which made the \(4 \times 4
-\times 4\), \(6 \times 6 \times 6\), and \(8 \times 8 \times 8\) grid calculations
-more tractable.
+The core computational step in the self-energy code is solving a Dyson-like
+equation whose lowest-energy solutions give the STE eigenvalues and
+eigenvectors. Rather than implement a custom parallel eigensolver, we used
+\texttt{PETSc} and \texttt{SLEPc} through the Python interfaces
+\texttt{petsc4py} and \texttt{slepc4py}, all compiled with \texttt{HIP} support
+for Frontier's AMD GPUs. This provides distributed arrays and matrices across
+GPUs and gives access to parallel eigensolvers that target only the lowest part
+of the spectrum. This way the calculation is effectively parallelized over $Q$ points,
+which made the \(4 \times 4 \times 4\), \(6 \times 6 \times 6\), and
+\(8 \times 8 \times 8\) grid runs more practical. The resulting wavefunctions are
+written to \texttt{.h5} files via \texttt{h5py} for parallel I/O.
 
-The largest performance gain was algorithmic. The self-energy method reduces
-wasted iterations in the excited-state forces method by providing a better
-initial distortion. The implementation also distributes the expensive matrix and
-momentum dependent operations across the machine. This is important for
-\(\mathrm{Cs_2AgInCl_6}\), where each iteration with excited-state forces can
-require DFT, DFPT, \(GW\), and BSE calculations.
+The self-energy result also provided a better initial guess for the lattice
+distortion used in the excited-state force calculations, reducing the number
+of lattice displacement steps needed to reach the relaxed STE geometry.
 
-The main remaining challenge is DFPT. We have not yet identified a Quantum
-ESPRESSO build that uses Frontier's AMD GPUs effectively for this part of the
-calculation. As a result, input generation remains less accelerated than the
-BerkeleyGW and self-energy stages. This was anticipated, since GPU support is not
-uniform across the full electronic structure stack. Addressing it would require a
-large software effort outside the main scope of this STE theory work.
-
-\subsection{Data Storage}
-
-The current data volume is estimated to be a few terabytes. Most of this comes
-from wave functions, dielectric matrices, electron phonon data, \(GW\) and BSE
-intermediate files, and self-energy outputs for dense grids. The largest storage
-pressure comes from \(\mathrm{Cs_2AgInCl_6}\) and from supercell related
-excited-state forces data.
-
-By the end of the current project period, the stored data should remain in the
-several terabyte range if only essential production data are retained. Scratch
-files that can be regenerated will be deleted. The retained data will include
-inputs, final outputs, convergence data, and selected intermediate files needed
-for reproducibility. Completed calculation directories will be compressed and
-moved to long term storage using center supported tools such as \texttt{hsi}.
-Publication data will be reduced to portable files containing structures, phonon
-mode projections, exciton energies, self-energy contributions, spectra, and
-figure scripts.
+The main remaining performance challenge is DFPT. A Quantum ESPRESSO build that
+uses Frontier's AMD GPUs effectively for this part of the workflow has not been
+identified, so input generation for the electron-phonon stages remains less
+accelerated than the BerkeleyGW and self-energy stages.
 
 \section{Project Plans for Next Year}
 
 \subsection{Summary of Project Plans}
 
-The next allocation period will focus on turning the completed calculation
-campaign into final scientific results. The main goal is to connect the existing
-first principles calculations to STE observables: the relaxed distortion, Stokes
-shift, emission linewidth, and temperature dependence of the photoluminescence
-spectrum.
+The next allocation period will focus on analyzing the completed calculations
+and preparing manuscripts before starting any new calculations. The goal is to
+extract STE observables from the data already in hand: the relaxed lattice
+distortion, the Stokes shift, the emission linewidth, and the temperature
+dependence of the photoluminescence spectrum.
 
-The first priority is analysis of the \(\mathrm{Cs_2AgInCl_6}\) study. The
-self-energy based distortion has provided the starting point for relaxation with
-excited-state forces. Next year will focus on comparing the relaxed structure
-with the harmonic self-energy prediction and quantifying the role of nonlinear
-lattice relaxation.
+The first priority is extracting and comparing properties from all completed
+calculations across all systems and both methods. This means computing the STE
+wavefunction, exciton projections onto band states, phonon-resolved
+contributions, Stokes shifts, and temperature-dependent emission linewidths for
+\(\mathrm{LiF}\), \(\mathrm{SiO_2}\), and \(\mathrm{Cs_2AgInCl_6}\), using
+both the self-energy and ESF approaches wherever both are available. Comparing
+the two methods across all three systems will show when the harmonic self-energy
+picture is sufficient and when non-harmonic relaxation changes the result. The
+goal at this stage is to have enough processed output to read and understand the
+data, before any writing begins.
 
-The second priority is to complete manuscript quality analysis of the
-\(\mathrm{LiF}\) and \(\mathrm{SiO_2}\) benchmarks. These systems provide a
-controlled test of the theory against prior calculations and available
-experimental data. The remaining work is mainly convergence analysis with respect
-to momentum grid, exciton basis, phonon modes, and the tadpole and Fan Migdal
-terms.
+The second priority is manuscript preparation. Two papers are planned: one on
+the self-energy framework for STEs and its temperature-dependent predictions,
+and one on the \(\mathrm{Cs_2AgInCl_6}\) STE using the self-energy-guided ESF
+result.
 
-The third priority is selective extension. Related materials or defect and doping
-configurations will be pursued only if the current analysis shows that they are
-needed to strengthen the scientific conclusions. Resource needs may increase for
-those cases because the effective problem size grows quickly and the \(GW\) plus
-BSE stages become more expensive.
-
-The planned work is directly tied to the project milestones:
-
-\begin{itemize}
-    \item Finalize convergence analysis for the finite momentum exciton and
-        self-energy calculations on the benchmark and target systems.
-    \item Complete any targeted refinement of the
-        \(\mathrm{Cs_2AgInCl_6}\) excited-state forces result.
-    \item Compute phonon resolved self-energy contributions, Stokes shifts, and
-        temperature dependent emission linewidths.
-    \item Compare harmonic self-energy predictions with nonlinear results from
-        excited-state forces to define the accuracy and limits of the method.
-    \item Prepare manuscripts on temperature dependent STE emission and the
-        self-energy guided \(\mathrm{Cs_2AgInCl_6}\) study.
-\end{itemize}
-
-No major change in scope is planned. The approach is now more integrated than
-originally envisioned because the self-energy method is used both for dynamical
-STE properties and for improving convergence of the excited-state forces method.
+Extension to new materials such as two-dimensional systems or Ruddlesden-Popper
+phases will be considered only after the current results are finalized and
+the manuscripts are underway. Based on current usage, a new material requiring
+finite-momentum exciton inputs and self-energy calculations is estimated at
+roughly 1,000~node hours. Adding ESF iterations would bring the total to
+roughly 2,000~node hours per material. These estimates could increase
+significantly depending on the system size, since larger unit cells raise the
+cost of the GW, BSE, and DFPT stages, and two-dimensional systems in particular
+may require methodological development to parallelize well over Frontier.
 
 \subsection{Development Work}
+\label{sec:development}
 
-Substantial development was completed during the current allocation period. The
-main effort was the theory and implementation of the STE self-energy method,
-including the self consistent tadpole term, the Fan Migdal term, finite momentum
-exciton inputs, and post processing for STE observables. Development also
-included tests on \(\mathrm{LiF}\), debugging, extension to denser grids, and the
-Frontier build of PETSc, SLEPc, petsc4py, and slepc4py with ROCm and HIP support.
+Development during the current allocation period focused on the theory and
+implementation of the STE self-energy method, including the self-consistent
+tadpole term, the Fan Migdal term, finite-momentum exciton inputs, and
+post-processing for STE observables. Development also included tests on
+\(\mathrm{LiF}\), debugging, extension to denser grids, and the Frontier build
+of \texttt{PETSc}, \texttt{SLEPc}, \texttt{petsc4py}, and
+\texttt{slepc4py} with \texttt{HIP} support for AMD GPUs.
 
-About 60 to 70 percent of the current effort went to development, testing, and
-validation because the work required new theory, new code, and a reliable bridge
-to excited-state forces. That development phase is largely complete. Next year's
-allocation should therefore be used mostly for analysis, final convergence
-checks, and manuscript preparation.
-
-Remaining development will focus on robustness and reproducibility. Planned tasks
-include automated convergence checks, a cleaner interface to BerkeleyGW outputs,
-lower memory use for dense grids, and reproducible scripts for spectra,
-linewidths, and mode resolved analysis. Development computing is expected to be
-about 25 percent of next year's use, with the rest directed to analysis and
-targeted production reruns.
-
-\subsection{New Code Applications}
-
-No entirely new production application is planned for next year. The work will
-continue to use Quantum ESPRESSO, EPW, BerkeleyGW, and the project specific STE
-self-energy code. The code stack is already in place; next year's use will focus
-on final analysis, selected reruns, and optional extensions rather than a new
-application path.
-
-The current year's tests provide the relevant performance evidence. The code has
-run on Frontier for \(4 \times 4 \times 4\), \(6 \times 6 \times 6\), and \(8
-\times 8 \times 8\) grids using distributed PETSc and SLEPc objects and
-parallelism over \(q\) points. This maps directly to the proposed calculations,
-where cost grows with the number of momentum points, exciton basis size, and
-self-energy matrix operations. BerkeleyGW also remains suitable because finite
-momentum BSE calculations can be batched over independent momentum points.
-
-If defect or doping calculations are added, the main added requirements will be
-memory and storage. Larger structural cells increase the electronic and excitonic
-basis sizes, and the \(GW\) plus BSE data products grow quickly. The plan is to
-keep the current application stack and use careful batching and data reduction,
-rather than introduce a new untested code path.
+Future development work will focus on the post-processing code needed to
+extract STE properties from completed calculations, including exciton
+projections, phonon-resolved contributions, real-space wavefunctions, and
+temperature-dependent linewidths. Some additional parallelization optimization 
+may also be
+needed depending on new systems and higher grid sizes. 
 
 \section{Publications Resulting from INCITE Awards}
 
-There are no submitted or published papers yet from this INCITE work that include
-the required INCITE or Leadership Computing Facility acknowledgement. Two
-manuscripts are in preparation from the calculations completed so far:
+There are no submitted or published papers yet from this INCITE work that
+include the required INCITE/OLCF acknowledgement.
+Two manuscripts are in preparation from the calculations completed so far:
 
 \begin{itemize}
-    \item A paper on the first principles exciton self-energy framework for STEs,
-        including dynamical effects and temperature dependent photoluminescence
-        linewidths.
-    \item A paper on \(\mathrm{Cs_2AgInCl_6}\), using self-energy guided
+    \item A paper on the first-principles exciton self-energy framework for
+        STEs, including temperature-dependent effects and
+        photoluminescence linewidths.
+    \item A paper on \(\mathrm{Cs_2AgInCl_6}\), using self-energy-guided
         excited-state forces to obtain the STE distortion, Stokes shift, and
         emission properties of the double perovskite.
 \end{itemize}
 
-These papers will include the required INCITE and facility acknowledgements when
-submitted.
+These papers will include the required INCITE/OLCF acknowledgements
+when submitted.
+
+\printbibliography
 
 \end{document}
